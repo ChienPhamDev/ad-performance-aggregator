@@ -1,12 +1,19 @@
 {
   "name": "ad-performance-aggregator",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "aggregator.js",
   "scripts": {
+    "start": "node aggregator.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": ["csv", "data-processing", "cli"],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "Ad Performance Aggregator - CSV processing CLI tool",
+  "dependencies": {
+    "cli-progress": "^3.12.0",
+    "commander": "^14.0.3",
+    "csv-parse": "^6.1.0",
+    "csv-parser": "^3.2.0"
+  }
 }
