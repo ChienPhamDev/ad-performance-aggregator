@@ -28,7 +28,11 @@ npm install
 ### Standard Mode (Single-Threaded)
 
 ```bash
+# Using node
 node aggregator.js --input ad_data.csv --output results/
+
+# Using npm script
+npm run single
 ```
 
 ![Single-threaded Execution](assets/run-single-thread.png)
@@ -38,7 +42,11 @@ node aggregator.js --input ad_data.csv --output results/
 Recommended for files larger than 100MB.
 
 ```bash
+# Using node
 node aggregator.js --input ad_data.csv --output results/ --parallel
+
+# Using npm script
+npm run parallel
 ```
 
 ![Parallel Execution](assets/run-parallel-thread.png)
