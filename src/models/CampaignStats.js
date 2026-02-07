@@ -12,6 +12,24 @@ class CampaignStats {
   }
 
   /**
+   * Parses a CSV line into a raw data object.
+   * @param {string} line - A single CSV row.
+   * @returns {object|null} Parsed data or null if invalid/header.
+   */
+  static parseLine(line) {
+    const parts = line.split(',');
+    if (parts.length < 6 || parts[0] === 'campaign_id') return null;
+
+    return {
+      id: parts[0],
+      impressions: parseInt(parts[2], 10) || 0,
+      clicks: parseInt(parts[3], 10) || 0,
+      spend: parseFloat(parts[4]) || 0,
+      conversions: parseInt(parts[5], 10) || 0,
+    };
+  }
+
+  /**
    * Updates state with new row data.
    */
   update(row) {
@@ -19,6 +37,17 @@ class CampaignStats {
     this.total_clicks += row.clicks;
     this.total_spend += row.spend;
     this.total_conversions += row.conversions;
+  }
+
+  /**
+   * Merges another stats object into this one.
+   * @param {object} stats - Stats object (can be raw or CampaignStats).
+   */
+  merge(stats) {
+    this.total_impressions += stats.total_impressions || 0;
+    this.total_clicks += stats.total_clicks || 0;
+    this.total_spend += stats.total_spend || 0;
+    this.total_conversions += stats.total_conversions || 0;
   }
 
   /**
