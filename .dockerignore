@@ -1,0 +1,11 @@
+node_modules
+npm-debug.log
+ad_data.csv
+ad_data.csv.zip
+results
+.git
+.vscode
+.agent
+PROMPTS.md
+requirement.md
+*.log

@@ -1,6 +1,5 @@
 node_modules
 ad_data.csv
-test.csv
 results/*
 .vscode
 docs/*

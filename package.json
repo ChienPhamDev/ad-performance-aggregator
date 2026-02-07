@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "main": "aggregator.js",
   "scripts": {
-    "start": "node aggregator.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "unzip": "tar -xf ad_data.csv.zip -C output",
+    "single": "node aggregator.js --input ad_data.csv --output results/",
+    "parallel": "node aggregator.js --input ad_data.csv --output results/ --parallel"
   },
   "keywords": ["csv", "data-processing", "cli"],
   "author": "",
