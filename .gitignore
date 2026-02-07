@@ -4,3 +4,4 @@ test.csv
 *.zip
 results/*
 .vscode
+docs/*
