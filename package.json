@@ -5,14 +5,22 @@
   "scripts": {
     "unzip": "tar -xf ad_data.csv.zip -C output",
     "single": "node aggregator.js --input ad_data.csv --output results/",
-    "parallel": "node aggregator.js --input ad_data.csv --output results/ --parallel"
+    "parallel": "node aggregator.js --input ad_data.csv --output results/ --parallel",
+    "test": "jest"
   },
-  "keywords": ["csv", "data-processing", "cli"],
+  "keywords": [
+    "csv",
+    "data-processing",
+    "cli"
+  ],
   "author": "",
   "license": "ISC",
   "description": "Ad Performance Aggregator - CSV processing CLI tool",
   "dependencies": {
     "cli-progress": "^3.12.0",
     "commander": "^14.0.3"
+  },
+  "devDependencies": {
+    "jest": "^30.2.0"
   }
 }

@@ -8,7 +8,7 @@ This application aggregates performance metrics (impressions, clicks, spend, con
 
 ## 🛠️ Features
 
-- **High Performance**: Processes 1GB CSV files in under 10 seconds (on multi-core systems).
+- **High Performance**: Processes 1GB CSV files in under 2 seconds (on 16-cores system).
 - **Parallel Processing**: Leverages Node.js Worker Threads to scale with your CPU.
 - **Memory Efficient**: Uses streaming and manual parsing to minimize object allocation and GC overhead.
 - **SOLID Architecture**: Clean, modular code structure following software engineering best practices.
@@ -31,6 +31,9 @@ npm install
 # Using node
 node aggregator.js --input ad_data.csv --output results/
 
+# Shorthand
+node aggregator.js -i ad_data.csv -o results/
+
 # Using npm script
 npm run single
 ```
@@ -44,6 +47,9 @@ Recommended for files larger than 100MB.
 ```bash
 # Using node
 node aggregator.js --input ad_data.csv --output results/ --parallel
+
+# Shorthand
+node aggregator.js -i ad_data.csv -o results/ -p
 
 # Using npm script
 npm run parallel
